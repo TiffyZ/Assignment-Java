@@ -1,11 +1,13 @@
 package com.example.springbootdemo.service;
 
-import com.example.springbootdemo.domain.dto.EntryResponseDTO;
+import com.example.springbootdemo.domain.Entry;
+import com.example.springbootdemo.domain.EntryResponseDTO;
 
 import java.util.Collection;
+import java.util.List;
 
 public interface EntryService {
-    Collection<EntryResponseDTO> findAll();
-    Collection<EntryResponseDTO> filterByAuth();
+    List<Entry> findAll();
+    List<Entry> findAll(String auth);
 
 }

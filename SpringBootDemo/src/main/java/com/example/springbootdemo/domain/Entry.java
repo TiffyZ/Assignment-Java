@@ -1,5 +1,6 @@
-package com.example.springbootdemo.domain.entry;
+package com.example.springbootdemo.domain;
 
+import com.fasterxml.jackson.annotation.JsonProperty;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.Getter;
@@ -11,26 +12,19 @@ import java.util.Objects;
 @AllArgsConstructor
 @NoArgsConstructor
 public class Entry {
+    @JsonProperty("API")
     private String API;
+    @JsonProperty("Description")
     private String Description;
+    @JsonProperty("Auth")
     private String Auth;
-    @Getter
+    @JsonProperty("HTTPS")
     private boolean HTTPS;
-
+    @JsonProperty("Cors")
     private String Cors;
+    @JsonProperty("Link")
     private String Link;
+    @JsonProperty("Category")
     private String Category;
 
-    @Override
-    public boolean equals(Object o) {
-        if (this == o) return true;
-        if (o == null || getClass() != o.getClass()) return false;
-        Entry e = (Entry) o;
-        return Link == e.Link;
-    }
-
-    @Override
-    public int hashCode() {
-        return Objects.hash(Link);
-    }
 }
